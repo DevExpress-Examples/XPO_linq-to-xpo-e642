@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/Form1.cs) (VB: [Form1.vb](./VB/Form1.vb))
+* [PersistentObjects.cs](./CS/PersistentObjects.cs) (VB: [PersistentObjects.vb](./VB/PersistentObjects.vb))
+* [Program.cs](./CS/Program.cs) (VB: [Program.vb](./VB/Program.vb))
+<!-- default file list end -->
 # LINQ to XPO
 
 
