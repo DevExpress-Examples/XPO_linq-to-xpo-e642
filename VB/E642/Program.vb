@@ -1,26 +1,21 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Windows.Forms
+Imports System
 Imports DevExpress.Xpo
 Imports DevExpress.Xpo.DB
 
 Namespace XpoLinqNorthwindSample
-    Friend NotInheritable Class Program
 
-        Private Sub New()
-        End Sub
+    Friend Module Program
 
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread> _
-        Shared Sub Main()
+        <STAThread>
+        Sub Main()
             Dim connectionStr As String = MSSqlConnectionProvider.GetConnectionString("(local)", "Northwind")
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(connectionStr, AutoCreateOption.DatabaseAndSchema)
             Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
             Application.Run(New Form1())
         End Sub
-    End Class
+    End Module
 End Namespace
