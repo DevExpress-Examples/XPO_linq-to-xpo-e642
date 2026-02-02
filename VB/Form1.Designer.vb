@@ -1,4 +1,4 @@
-﻿' Developer Express Code Central Example:
+' Developer Express Code Central Example:
 ' LINQ to XPO
 ' 
 ' LINQ is .NET Language-Integrated Query
@@ -15,9 +15,10 @@
 ' 
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E642
-
 Namespace XpoLinqNorthwindSample
-    Partial Public Class Form1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -28,14 +29,14 @@ Namespace XpoLinqNorthwindSample
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -50,7 +51,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnSelectTop = New DevExpress.XtraEditors.SimpleButton()
             Me.btnJoin = New DevExpress.XtraEditors.SimpleButton()
             Me.btnAggregates = New DevExpress.XtraEditors.SimpleButton()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -72,6 +73,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnSelectWhere.Size = New System.Drawing.Size(122, 23)
             Me.btnSelectWhere.TabIndex = 1
             Me.btnSelectWhere.Text = "&Select With 'Where'"
+            AddHandler Me.btnSelectWhere.Click, New System.EventHandler(AddressOf Me.btnSelectWhere_Click)
             ' 
             ' simpleButton2
             ' 
@@ -80,6 +82,7 @@ Namespace XpoLinqNorthwindSample
             Me.simpleButton2.Size = New System.Drawing.Size(122, 23)
             Me.simpleButton2.TabIndex = 2
             Me.simpleButton2.Text = "&Clear Log"
+            AddHandler Me.simpleButton2.Click, New System.EventHandler(AddressOf Me.btnClear_Click)
             ' 
             ' panelControl1
             ' 
@@ -103,6 +106,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnAny.Size = New System.Drawing.Size(122, 23)
             Me.btnAny.TabIndex = 7
             Me.btnAny.Text = "Find An&y"
+            AddHandler Me.btnAny.Click, New System.EventHandler(AddressOf Me.btnAny_Click)
             ' 
             ' btnGroup
             ' 
@@ -111,6 +115,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnGroup.Size = New System.Drawing.Size(122, 23)
             Me.btnGroup.TabIndex = 6
             Me.btnGroup.Text = "&Group By"
+            AddHandler Me.btnGroup.Click, New System.EventHandler(AddressOf Me.btnGroup_Click)
             ' 
             ' btnSelectTop
             ' 
@@ -119,6 +124,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnSelectTop.Size = New System.Drawing.Size(122, 23)
             Me.btnSelectTop.TabIndex = 5
             Me.btnSelectTop.Text = "Select &Top 5"
+            AddHandler Me.btnSelectTop.Click, New System.EventHandler(AddressOf Me.btnSelectTop_Click)
             ' 
             ' btnJoin
             ' 
@@ -127,6 +133,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnJoin.Size = New System.Drawing.Size(122, 23)
             Me.btnJoin.TabIndex = 4
             Me.btnJoin.Text = "Group &Join"
+            AddHandler Me.btnJoin.Click, New System.EventHandler(AddressOf Me.btnJoin_Click)
             ' 
             ' btnAggregates
             ' 
@@ -135,6 +142,7 @@ Namespace XpoLinqNorthwindSample
             Me.btnAggregates.Size = New System.Drawing.Size(122, 23)
             Me.btnAggregates.TabIndex = 3
             Me.btnAggregates.Text = "&Aggregates"
+            AddHandler Me.btnAggregates.Click, New System.EventHandler(AddressOf Me.btnAggregates_Click)
             ' 
             ' Form1
             ' 
@@ -145,24 +153,30 @@ Namespace XpoLinqNorthwindSample
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "LINQ to XPO (C#)"
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
             Me.PerformLayout()
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private textBox1 As System.Windows.Forms.TextBox
-        Private WithEvents btnSelectWhere As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents simpleButton2 As DevExpress.XtraEditors.SimpleButton
+
+        Private btnSelectWhere As DevExpress.XtraEditors.SimpleButton
+
+        Private simpleButton2 As DevExpress.XtraEditors.SimpleButton
+
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
-        Private WithEvents btnAggregates As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents btnJoin As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents btnSelectTop As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents btnGroup As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents btnAny As DevExpress.XtraEditors.SimpleButton
+
+        Private btnAggregates As DevExpress.XtraEditors.SimpleButton
+
+        Private btnJoin As DevExpress.XtraEditors.SimpleButton
+
+        Private btnSelectTop As DevExpress.XtraEditors.SimpleButton
+
+        Private btnGroup As DevExpress.XtraEditors.SimpleButton
+
+        Private btnAny As DevExpress.XtraEditors.SimpleButton
     End Class
 End Namespace
-
